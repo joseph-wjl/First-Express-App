@@ -10,6 +10,10 @@ app.get('/cats', (req, res) => {
     res.send('Meow!')
 })
 
+app.get(/(.*)/, (req, res) => {
+    res.send(`Path not found!`)
+})
+
 app.listen(3000, () => {
     console.log('listening on port 3000')
 })
