@@ -6,10 +6,17 @@ const app = express()
 //     // res.send('<h1>This is my homepage!</h1>')
 // })
 
-app.get('/r/:subreddit', (req, res) => {
-    const { subreddit } = req.params
-    // const subreddit = req.params.subreddit
-    res.send(`Browsing the ${subreddit} subreddit!`)
+app.get('/r/:subreddit/:postID', (req, res) => {
+    const { subreddit, postID } = req.params
+    res.send(`Viewing post:${postID} of the ${subreddit} subreddit!`)
+})
+
+app.get('/search', (req, res) => {
+    const { q } = req.query;
+    if (!q) {
+        res.send('Nothing found if nothing searched!')
+    }
+    res.send(`<h1>Search results for: ${q}</h1>`)
 })
 
 app.get('/cats', (req, res) => {
