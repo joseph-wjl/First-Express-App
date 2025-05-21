@@ -6,6 +6,12 @@ const app = express()
 //     // res.send('<h1>This is my homepage!</h1>')
 // })
 
+app.get('/r/:subreddit', (req, res) => {
+    const { subreddit } = req.params
+    // const subreddit = req.params.subreddit
+    res.send(`Browsing the ${subreddit} subreddit!`)
+})
+
 app.get('/cats', (req, res) => {
     res.send('Meow!')
 })
