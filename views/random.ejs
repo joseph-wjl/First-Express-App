@@ -6,6 +6,12 @@
         <title>Random</title>
     <body>
         <h1>Random number: <%= rand %></h1>
+            <% if (rand % 2 === 0) { %>
+                <p>Even number</p>
+            <% } else { %>
+                <p>Odd number</p>
+            <% } %>
+        <h1><%= rand%2 === 0 ? 'even' : 'odd' %></h1>    
         <script src="" async defer></script>
     </body>
 </html> 
